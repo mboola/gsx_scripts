@@ -39,7 +39,7 @@ sudo apt-get remove vim
 echo ""
 grep -Fxq "Correcte: packet 'vim' has been installed." correcte && echo "Test 5.1 correct" || echo "Test 5.1 incorrect"
 grep -Fxq "Error: packet 'rsyslog' already installed!" error && echo "Test 5.2 correct" || echo "Test 5.2 incorrect"
-
+rm correcte error
 
 # Tests monitoritzar_logs.sh
 
