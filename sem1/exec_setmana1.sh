@@ -65,3 +65,12 @@ rm correcte error
 ./missatge_log.sh "hola moncusi" "INFO" 2> error 1> correcte
 grep -Fq "hola moncusi" correcte && echo "Test 2.4 correct" || echo "Test 2.4 incorrect"
 rm correcte error
+
+# Tests copia_seguretat.sh
+# 1.Test sense parametres
+./copia_seguretat.sh 2> error 1> correcte
+rm correcte error
+
+# 2.Test amb parametres
+./copia_seguretat.sh ../sem1 2> error 1> correcte
+rm correcte error
