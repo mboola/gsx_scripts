@@ -1,9 +1,10 @@
 [Unit]
 Description=Monotorizar logs
 [Service]
-ExecStart=/usr/local/bin/monitoritzar_logs.sh
+ExecStart=/usr/local/bin/monitoritzar_logs.sh ${files}
+EnvironmentFile=/etc/monitoritzar.conf
 User=root
-StandardOutput=append:/var/log/monitoritzar_logs.log
-StandardError=append:/var/log/monitoritzar_logs.log
+StandardOutput=append:/var/log/monitoritzar_logs_std.log
+StandardError=append:/var/log/monitoritzar_logs_err.log
 [Install]
 WantedBy=multi-user.target

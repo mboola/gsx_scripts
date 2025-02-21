@@ -2,8 +2,5 @@
 #
 # Prints the logs of a service.
 
-echo "funca"
+sudo journalctl ${service} >&1
 
-for service in "${@}"; do
-    sudo journalctl -u ${service} >&1
-done
