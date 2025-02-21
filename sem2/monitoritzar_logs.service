@@ -1,0 +1,9 @@
+[Unit]
+Description=Monotorizar logs
+[Service]
+ExecStart=/usr/local/bin/monitoritzar_logs.sh
+User=root
+StandardOutput=append:/var/log/monitoritzar_logs.log
+StandardError=append:/var/log/monitoritzar_logs.log
+[Install]
+WantedBy=multi-user.target

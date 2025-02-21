@@ -1,0 +1,8 @@
+[Unit]
+Description=Timer del servicio monitorea logs
+[Timer]
+OnActiveSec=5min
+OnUnitActiveSec=5min
+Persistent=true
+[Install]
+WantedBy=timers.target
