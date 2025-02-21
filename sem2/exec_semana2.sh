@@ -8,7 +8,7 @@
 
 # 1. Normal test
 echo "Prueba 1: Ejecución del script por primera vez (se espera una instalación exitosa=archivo error vacío)..."
-./install_monitoritza.sh 2> error 1> correct
+./install_monitoritzar.sh 2> error 1> correct
 if [ ! -s error ]; then
     echo -e "\e[32mTest 1 correcto\e[0m"
 else
@@ -25,7 +25,7 @@ fi
 
 # 2. Test when the service is already installed
 echo "Prueba 3: Ejecución del script nuevamente (se espera un error por servicio ya existente)..."
-./install_monitoritza.sh 2> error 1> correct
+./install_monitoritzar.sh 2> error 1> correct
 echo ""
 errorLink="ln: failed to create symbolic link '/etc/systemd/system/monitoritzar_logs.service': File exists
 ln: failed to create symbolic link '/etc/systemd/system/monitoritzar_logs.timer': File exists"
