@@ -11,8 +11,8 @@ sudo cp -p monitoritzar_logs.service /lib/systemd/system/monitoritzar_logs.servi
 sudo cp -p monitoritzar_logs.timer /lib/systemd/system/monitoritzar_logs.timer 2>&2 1>&1
 
 #Makes soft links that point to service and timer
-sudo ln -s /lib/systemd/system/monitoritzar_logs.service /etc/systemd/system/monitoritzar_logs.service 2>&2 1>&1
-sudo ln -s /lib/systemd/system/monitoritzar_logs.timer /etc/systemd/system/monitoritzar_logs.timer 2>&2 1>&1
+sudo ln -s /lib/systemd/system/monitoritzar_logs.service /etc/systemd/system/monitoritzar_logs.service 2>/dev/null 1>&1 || echo "Soft link already exists with monitoritzar_logs.service" >&2
+sudo ln -s /lib/systemd/system/monitoritzar_logs.timer /etc/systemd/system/monitoritzar_logs.timer 2>/dev/null 1>&1 || echo "Soft link already exists with monitoritzar_logs.timer" >&2
 
 sudo cp -p monitoritzar.conf /etc/monitoritzar.conf
 

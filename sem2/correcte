@@ -1,0 +1,28 @@
+[32m[LOG]Se va a activar el servicio monitoritzar_logs con su timer de 5min[0m
+Soft link already exists with monitoritzar_logs.service
+Soft link already exists with monitoritzar_logs.timer
+[32m[LOG]Estado del servicio[0m
+● monitoritzar_logs.service - Monotorizar logs
+     Loaded: loaded (/lib/systemd/system/monitoritzar_logs.service; linked; vendor preset: enabled)
+     Active: active (running) since Sat 2025-02-22 18:39:17 CET; 40ms ago
+TriggeredBy: ● monitoritzar_logs.timer
+   Main PID: 371539 (monitoritzar_lo)
+      Tasks: 3 (limit: 6916)
+     Memory: 3.8M
+        CPU: 36ms
+     CGroup: /system.slice/monitoritzar_logs.service
+             ├─371539 /bin/bash /usr/local/bin/monitoritzar_logs.sh "-u cron -u copia_seguretat.timer"
+             ├─371540 sudo journalctl -u cron -u copia_seguretat.timer
+             └─371542 journalctl -u cron -u copia_seguretat.timer
+
+Feb 22 18:39:17 pop-os systemd[1]: Started Monotorizar logs.
+Feb 22 18:39:17 pop-os sudo[371540]:     root : PWD=/ ; USER=root ; COMMAND=/usr/bin/journalctl -u cron -u copia_seguretat.timer
+Feb 22 18:39:17 pop-os sudo[371540]: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=0)
+[32m[LOG]Estado del timer[0m
+● monitoritzar_logs.timer - Timer del servicio monitorea logs
+     Loaded: loaded (/lib/systemd/system/monitoritzar_logs.timer; linked; vendor preset: enabled)
+     Active: active (waiting) since Sat 2025-02-22 18:39:00 CET; 16s ago
+    Trigger: Sat 2025-02-22 18:44:00 CET; 4min 43s left
+   Triggers: ● monitoritzar_logs.service
+
+Feb 22 18:39:00 pop-os systemd[1]: Started Timer del servicio monitorea logs.
