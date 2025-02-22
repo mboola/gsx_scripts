@@ -26,9 +26,7 @@ sudo systemctl start monitoritzar_logs.service
 sudo systemctl start monitoritzar_logs.timer
 
 echo -e "\e[32m[LOG]Estado del servicio\e[0m"
-sudo systemctl status monitoritzar_logs.service | cat
+sudo systemctl status monitoritzar_logs | cat
 
 echo -e "\e[32m[LOG]Estado del timer\e[0m"
 sudo systemctl status monitoritzar_logs.timer | cat
-
-
