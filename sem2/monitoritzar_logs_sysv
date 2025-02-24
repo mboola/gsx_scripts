@@ -12,6 +12,7 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin
 SERVICE_SCRIPT="/usr/local/bin/monitoritzar_logs.sh"
 PIDFILE="/var/run/monitoritzar_logs.pid"
+PARAMS="-u cron -u rsyslog -u redys"
 
 SERVICE_NAME="monitoritzar_logs"
 LOG_FILE="/var/log/$SERVICE_NAME.log"
@@ -19,7 +20,7 @@ LOG_FILE="/var/log/$SERVICE_NAME.log"
 case "$1" in
     start)
         echo "Iniciant $SERVICE_NAME..." | tee -a "$LOG_FILE"
-        ./${SERVICE_SCRIPT} "-u cron -u rsyslog -u redys" 1> "$LOG_FILE" &
+        ./${SERVICE_SCRIPT} ${PARAMS} 1> "$LOG_FILE" &
         ;;
     stop)
         echo "Aturant $SERVICE_NAME..." | tee -a "$LOG_FILE"

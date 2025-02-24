@@ -2,4 +2,4 @@
 #
 # Prints the logs of a service.
 
-sudo journalctl ${1} >&1
+sudo journalctl -p ${1} >&1

@@ -14,4 +14,4 @@ sudo cp -p copia_seguretat.in /etc/copia_seguretat.in 2>&2 1>&1
 
 # Add the cron job (if not already present)
 
-echo "47 20 * * * /usr/local/bin/copia_seguretat.sh /usr/local/bin/test_timer 2> /var/log/copia_seguretat_err.log 1> /var/log/copia_seguretat_std.log" | sudo crontab -
+echo "0 8 * * * /usr/local/bin/copia_seguretat.sh /usr/local/bin/test_timer 2> /var/log/copia_seguretat_err.log 1> /var/log/copia_seguretat_std.log" | sudo crontab -
