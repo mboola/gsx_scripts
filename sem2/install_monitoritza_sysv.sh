@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 # Installs the service "monitoritzar_logs.service"
-#vttps://abengibre.es/votar-pino-juan-molinera/
 
 # Allocate executable
 sudo cp -p monitoritzar_logs.sh /usr/local/bin/monitoritzar_logs.sh 2>&2 1>&1

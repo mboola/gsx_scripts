@@ -3,7 +3,6 @@
 # Does a backup of directories passed as arguments.
 
 if [ "$#" -eq 0 ]; then
-    echo "test diantre" > /home/mpovill-/funca
     echo "Error: Input at least one directory." >&2
     exit 1
 fi
